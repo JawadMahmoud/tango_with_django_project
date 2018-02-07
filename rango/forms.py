@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from rango.models import Page, Category, UserProfile
 
-class CategoryFrom(forms.ModelForm):
+class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="Please enter the category name.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -12,7 +12,7 @@ class CategoryFrom(forms.ModelForm):
         model = Category
         fields = ('name',)
 
-class PageFrom(forms.ModelForm):
+class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=128, help_text="Please enter the title of the page.")
     url = forms.URLField(max_length=2000, help_text="Please enter the URL of the page")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)

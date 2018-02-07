@@ -7,8 +7,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category
 from rango.models import Page
-from rango.forms import CategoryFrom
-from rango.forms import PageFrom
+from rango.forms import CategoryForm
+from rango.forms import PageForm
 from rango.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
