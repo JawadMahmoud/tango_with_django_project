@@ -57,11 +57,11 @@ def show_category(request, category_name_slug):
 
 @login_required
 def add_category(request):
-    form = CategoryFrom()
+    form = CategoryForm()
 
     # A HTTP POST?
     if request.method == 'POST':
-        form = CategoryFrom(request.POST)
+        form = CategoryForm(request.POST)
 
         if form.is_valid():
             form.save(commit=True)
@@ -78,10 +78,10 @@ def add_page(request, category_name_slug):
     except Category.DoesNotExist:
         category = None
     
-    form = PageFrom()
+    form = PageForm()
 
     if request.method == 'POST':
-        form = PageFrom(request.POST)
+        form = PageForm(request.POST)
         if form.is_valid():
             if category:
                 page = form.save(commit=False)

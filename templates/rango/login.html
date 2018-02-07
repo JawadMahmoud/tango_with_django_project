@@ -6,9 +6,8 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>
-        Login to Rango
-    </h1>
+
+    <h1>Login to Rango</h1>
 
     <form id="login_form" method="POST" action="{% url 'login' %}">
         {% csrf_token %}
